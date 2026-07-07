@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #0a0a0a;
+  --foreground: #e5e5e5;
+  --gold: #c9a961;
+  --gold-light: #d4af6f;
+  --gold-dark: #a8904f;
+  --black: #000000;
+  --dark-gray: #141414;
+  --medium-gray: #1a1a1a;
+  --light-gray: #242424;
+  --border: rgba(255, 255, 255, 0.06);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .text-gold {
+    color: var(--gold);
+  }
+  
+  .bg-dark {
+    background-color: var(--dark-gray);
+  }
+  
+  .bg-medium {
+    background-color: var(--medium-gray);
+  }
+  
+  .border-subtle {
+    border-color: var(--border);
+  }
+}
+
+/* Scrollbar styling - minimal */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Minimal card effect */
+.card-minimal {
+  background: var(--dark-gray);
+  border: 1px solid var(--border);
+  transition: all 0.2s ease;
+}
+
+.card-minimal:hover {
+  border-color: rgba(255, 255, 255, 0.1);
+  background: var(--medium-gray);
+}
+
+/* Subtle button */
+.btn-subtle {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--foreground);
+  border: 1px solid var(--border);
+  transition: all 0.2s ease;
+  backdrop-filter: blur(10px);
+}
+
+.btn-subtle:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.12);
+  transform: translateY(-1px);
+}
+
+.btn-gold-subtle {
+  background: rgba(201, 169, 97, 0.12);
+  color: var(--gold);
+  border: 1px solid rgba(201, 169, 97, 0.2);
+  transition: all 0.2s ease;
+}
+
+.btn-gold-subtle:hover {
+  background: rgba(201, 169, 97, 0.18);
+  border-color: rgba(201, 169, 97, 0.3);
+  color: var(--gold-light);
+}
+
+/* Glass effect - subtle */
+.glass-subtle {
+  background: rgba(20, 20, 20, 0.6);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--border);
+}
+
+/* Smooth transitions */
+* {
+  transition-property: color, background-color, border-color, transform, opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+}
+
+/* Remove focus outline, use subtle ring */
+*:focus {
+  outline: none;
+}
+
+*:focus-visible {
+  outline: 2px solid rgba(201, 169, 97, 0.3);
+  outline-offset: 2px;
+}
